@@ -32,6 +32,6 @@ def solution(new_id):
     return new_id
 
 
-A = input("아이디를 입력해주세요 : ")
-B = solution(A)
-print(B)
+input_user_id = input("아이디를 입력해주세요 : ")
+solution_user_id = solution(input_user_id)
+print(solution_user_id)
