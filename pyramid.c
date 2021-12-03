@@ -4,7 +4,7 @@ int main(void)
 {
     int num, a;
 
-    printf("피라미드 층수를 입력: ");
+    printf("put number: ");
     scanf("%d", &num);
 
     for (a = 0; a < num; a++)
