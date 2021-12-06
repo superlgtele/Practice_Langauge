@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
+// sqrt(루트 씌워주기), pow(A, B) = A의 B제곱
+// 이 두 함수는 <math.h> 에서 가져옴
+
 int main(void)
 {
     int x1, y1, x2, y2;
