@@ -1,5 +1,11 @@
-const title = document.querySelector(".first h1");
-const secondtitle = document.getElementById("second");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
 
-console.log(title);
-console.log(secondtitle);
+function onLoginSubmit(event) {
+    event.preventDefault();
+    console.log(loginInput.value);
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+
+
