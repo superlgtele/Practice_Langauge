@@ -1,4 +1,5 @@
 <script>
+  // constructor
   function market(name, price) {
     this.name = name;
     this.price = price;
@@ -9,33 +10,23 @@
 
   const product1 = new market("shirts", 50000);
   const product2 = new market("pants", 60000);
-  const arr = [2, 3, 4];
-  //   == const arr = new Array(2,3,4);
 
-  const mama = { name: "yee" };
-  const watasi = {};
-  watasi.__proto__ = mama;
+  //"const arr = [2, 3, 4]" === "new Array(2,3,4)"
 
-  function school(name, age) {
-    this.name = name;
-    this.age = age;
-    this.sayHi = function () {
-      console.log("안녕 나는 " + this.name + "이야");
-    };
+  // class
+  class Dog {
+    constructor(type, color) {
+      this.type = type;
+      this.color = color;
+    }
   }
 
-  const student1 = new school("jang", 26);
-  student1.sayHi();
-
-  Array.prototype.removefour = function () {
-    for (let i = 0; i < this.length; i++) {
-      if (this[i] === 4) {
-        this.splice(i, 1);
-      }
+  class Cat extends Dog {
+    constructor(type, color, age) {
+      super(type, color);
+      this.age = age;
     }
-  };
+  }
 
-  const array = [1, 2, 4, 6, 7];
-  array.removefour();
-  console.log(array);
+  const cat1 = new Cat("hotcat", "white", 5);
 </script>
