@@ -1,32 +1,34 @@
+<button id="button">성공버튼</button>
+
 <script>
-  // constructor
-  function market(name, price) {
-    this.name = name;
-    this.price = price;
-    this.부가세 = function () {
-      console.log(this.price * 0.1);
-    };
-  }
+  async function 성공버튼함수() {
+    const 프로미스 = new Promise(function (resolve, reject) {
+      document.getElementById("button").addEventListener("click", function () {
+        resolve("나이스~");
+      });
+    });
 
-  const product1 = new market("shirts", 50000);
-  const product2 = new market("pants", 60000);
-
-  //"const arr = [2, 3, 4]" === "new Array(2,3,4)"
-
-  // class
-  class Dog {
-    constructor(type, color) {
-      this.type = type;
-      this.color = color;
+    try {
+      const 결과 = await 프로미스;
+      console.log(결과);
+    } catch {
+      console.log("실패!");
     }
   }
 
-  class Cat extends Dog {
-    constructor(type, color, age) {
-      super(type, color);
-      this.age = age;
-    }
-  }
+  성공버튼함수();
 
-  const cat1 = new Cat("hotcat", "white", 5);
+  // ---Promise 예제---
+  //   const 프로미스 = new Promise(function (resolve, reject) {
+  //   const 어려운연산 = 1 + 1;
+  //   resolve(어려운연산);
+  // });
+
+  // 프로미스
+  //   .then(function (result) {
+  //     console.log(result);
+  //   })
+  //   .catch(function () {
+  //     console.log("실패했어요");
+  //   });
 </script>
