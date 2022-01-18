@@ -1,15 +1,30 @@
-p {
-  text-align: center;
+.container {
+  width: 600px;
 }
 
-.profile {
-  color: white;
-  width: 300px;
-  background-color: cadetblue;
-  margin-left: 10px;
-  padding: 10px;
-  border: 2px solid black;
-  border-radius: 5px;
-  margin-left: auto;
-  margin-right: auto;
+.header {
+  width: 100%;
+  height: 50px;
+  background: aquamarine;
+}
+
+.leftmenu {
+  width: 20%;
+  height: 400px;
+  background: cornflowerblue;
+  float: left;
+}
+
+.rightmenu {
+  width: 80%;
+  height: 400px;
+  background: coral;
+  float: right;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+  clear: both;
 }
