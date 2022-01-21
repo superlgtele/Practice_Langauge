@@ -1,34 +1,13 @@
-<button id="button">성공버튼</button>
-
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<h4 id="hello">안녕~</h4>
+<button class="change">바꾸기</button>
 <script>
-  async function 성공버튼함수() {
-    const 프로미스 = new Promise(function (resolve, reject) {
-      document.getElementById("button").addEventListener("click", function () {
-        resolve("나이스~");
-      });
+  $(".change").click(function () {
+    $.ajax({
+      url: "https://codingapple1.github.io/hello.txt",
+      type: "get",
+    }).done(function (data) {
+      $("#hello").text(data);
     });
-
-    try {
-      const 결과 = await 프로미스;
-      console.log(결과);
-    } catch {
-      console.log("실패!");
-    }
-  }
-
-  성공버튼함수();
-
-  // ---Promise 예제---
-  //   const 프로미스 = new Promise(function (resolve, reject) {
-  //   const 어려운연산 = 1 + 1;
-  //   resolve(어려운연산);
-  // });
-
-  // 프로미스
-  //   .then(function (result) {
-  //     console.log(result);
-  //   })
-  //   .catch(function () {
-  //     console.log("실패했어요");
-  //   });
+  });
 </script>
