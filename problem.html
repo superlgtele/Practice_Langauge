@@ -10,4 +10,15 @@
       $("#hello").text(data);
     });
   });
+
+  function 첫째함수(parameter) {
+    console.log(1);
+    parameter();
+  }
+
+  function 둘째함수() {
+    console.log(2);
+  }
+
+  첫째함수(둘째함수);
 </script>
