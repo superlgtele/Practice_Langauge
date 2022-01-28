@@ -21,4 +21,14 @@
   }
 
   첫째함수(둘째함수);
+
+  function 컨스트럭터(friend) {
+    this.name = friend;
+    this.age = 26;
+    this.hello = function () {
+      console.log("안녕하세여 " + this.name + "입니다");
+    };
+  }
+
+  const 학생1 = new 컨스트럭터("Yujaeyoung");
 </script>
