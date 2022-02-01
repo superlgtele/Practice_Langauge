@@ -27,3 +27,11 @@ var 버튼기능 = document.querySelector("#button");
         저는변경.innerHTML = "김홍기입니다";
     }
 });
+var Person = /** @class */ (function () {
+    function Person(성) {
+        this.name = 성;
+    }
+    return Person;
+}());
+var 사람1 = new Person("kim");
+var 선생 = { name: "Seo", age: 30 };

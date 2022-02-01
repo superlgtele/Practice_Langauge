@@ -32,3 +32,20 @@ let 버튼기능 = document.querySelector("#button");
     저는변경.innerHTML = "김홍기입니다";
   }
 });
+
+class Person {
+  name: String;
+  constructor(성: string) {
+    this.name = 성;
+  }
+}
+const 사람1 = new Person("kim");
+
+// interface는 중복선언 가능(합쳐짐), type은 중복선언 불가능
+interface Student {
+  name: String;
+}
+interface Teacher extends Student {
+  age: number;
+}
+let 선생: Teacher = { name: "Seo", age: 30 };
