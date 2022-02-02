@@ -8,6 +8,28 @@ body {
   margin: 0px;
 }
 
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+}
+
+.nav-logo {
+  color: greenyellow;
+  font-size: 20px;
+  transition: all 1s;
+}
+
+.change-logo {
+  color: black;
+  font-size: 17px;
+}
+
 .main-background {
   width: 100%;
   height: 500px;

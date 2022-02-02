@@ -10,6 +10,10 @@
   <body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
+    <div class="nav-menu">
+      <h4 style="margin: 0" class="nav-logo">Rest Home</h4>
+    </div>
+
     <div class="main-background">
       <h4 class="main-title">Rest</h4>
       <p class="main-content">
@@ -85,6 +89,14 @@
     </div>
 
     <script>
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() > 200) {
+          $(".nav-menu h4").addClass("change-logo");
+        } else {
+          $(".nav-menu h4").removeClass("change-logo");
+        }
+      });
+
       $(".slide-1").click(function () {
         $(".slide-container").css("transform", "translateX(0vw)");
       });
