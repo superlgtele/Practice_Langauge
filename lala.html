@@ -8,6 +8,8 @@
     <title>GOGO</title>
   </head>
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
     <div class="main-background">
       <h4 class="main-title">Rest</h4>
       <p class="main-content">
@@ -22,6 +24,24 @@
         most important.
       </p>
     </div>
+
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="./img/몽환1.PNG" />
+        </div>
+        <div class="slide-box">
+          <img src="./img/몽환2.PNG" />
+        </div>
+        <div class="slide-box">
+          <img src="./img/몽환3.PNG" />
+        </div>
+      </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
 
     <div class="form-background">
       <div class="form-white">
@@ -63,5 +83,17 @@
         </form>
       </div>
     </div>
+
+    <script>
+      $(".slide-1").click(function () {
+        $(".slide-container").css("transform", "translateX(0vw)");
+      });
+      $(".slide-2").click(function () {
+        $(".slide-container").css("transform", "translateX(-100vw)");
+      });
+      $(".slide-3").click(function () {
+        $(".slide-container").css("transform", "translateX(-200vw)");
+      });
+    </script>
   </body>
 </html>
