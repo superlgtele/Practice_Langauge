@@ -1,0 +1,81 @@
+<!-- 프로미스 상태
+1. 성공 -> resolved
+2. 대기 -> pending
+3. 실패 -> rejected
+
+프로미스는 CallBack 함수와 달리 성공, 실패의 경우를 나눌 수 있음.
+Async는 성공의 경우만 가능(파라미터가 없어서)
+-> 그래서 Try{성공시 코드} Catch{실패시 코드} 사용함.
+
+프로미스는 비동기 함수가 아님 / CallBack 함수 깔끔하게 쓰려는 용도
+  new Promise(function (resolve, reject) {
+    let WantData = 10초 걸리는 함수;
+    resolve(wantData) <-- 10초간 다른 기능들 실행못함
+  }); -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<img id="test" src="https://codingapple1.github.io/kona.jpg" />
+
+<script>
+  const 프로미스 = new Promise(function (resolve, reject) {
+    let WantData = 3 + 4;
+    setTimeout(function () {
+      resolve(WantData);
+    }, 1000);
+  });
+  프로미스
+    .then(function (result) {
+      console.log(result);
+    })
+    .catch(function () {
+      console.log("Fail!");
+    });
+
+  const 문제1 = new Promise(function (resolve, reject) {
+    let img = document.querySelector("#test");
+    img.addEventListener("load", function () {
+      resolve();
+    });
+    img.addEventListener("error", function () {
+      reject();
+    });
+  });
+  문제1
+    .then(function () {
+      console.log("이미지출력 성공!");
+    })
+    .catch(function () {
+      console.log("이미지출력 실패!");
+    });
+
+  const AjaxData = function (URL) {
+    return new Promise(function (resolve, reject) {
+      $.get(URL).done(function (result) {
+        resolve(result);
+      });
+    });
+  };
+  const 문제2 = AjaxData("https://codingapple1.github.io/hello.txt");
+  문제2
+    .then(function (result1) {
+      console.log(result1);
+      return AjaxData("https://codingapple1.github.io/hello2.txt");
+    })
+    .then(function (result2) {
+      console.log(result2);
+    });
+
+  async function 어싱크() {
+    const 어싱크프로미스 = new Promise(function (resolve, reject) {
+      let WantData2 = 2 + 2;
+      resolve(WantData2);
+    });
+    try {
+      const 어싱크결과 = await 어싱크프로미스;
+      console.log(어싱크결과);
+    } catch {
+      console.log("실패!");
+    }
+  }
+  어싱크();
+</script>
