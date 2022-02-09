@@ -1,0 +1,18 @@
+<script>
+  함수실행();
+  console.log(a);
+  var a = 1;
+  function 함수실행() {
+    var b = 2;
+    console.log(b);
+  }
+
+  // i) 선언단계에서 Object-Record -> 함수실행(빈 함수 오브젝트 들어감).
+  //    var a도 Object-Record 들어감.
+  //    선언단계 끝!
+
+  // ii) 실행단계에서 함수실행()을 실행 -> console.log(a)하기 전단계임.
+  //     근데 var b의값인 2가 출력이됨(a에 할당된 undefined보다 먼저 출력됨).
+  //     왜 a는 undefined로 출력됬는데 b는 잘나오지?
+  //     그리고 선언단계에서 생성된 빈 함수 오브젝트는 뭐지?
+</script>

@@ -11,24 +11,28 @@
     });
   });
 
-  function 첫째함수(parameter) {
-    console.log(1);
-    parameter();
+  const 출석부 = ["가", "나", "다", "라"];
+  function 글자찾기(파라미터) {
+    for (let i = 0; i < 4; i++) {
+      if (파라미터 == 출석부[i]) {
+        return console.log("포함");
+      } else {
+        console.log("미포함");
+      }
+    }
   }
+  글자찾기("다");
 
-  function 둘째함수() {
-    console.log(2);
+  function 목표량계산기(판매실적어레이, 평균월별판매량) {
+    let a = 0;
+    for (let i = 0; i < 판매실적어레이.length; i++) {
+      a += 판매실적어레이[i];
+    }
+    console.log(
+      "12월엔 " +
+        parseInt(평균월별판매량 * (판매실적어레이.length + 1) - a) +
+        "개를 팔아야합니다"
+    );
   }
-
-  첫째함수(둘째함수);
-
-  function 컨스트럭터(friend) {
-    this.name = friend;
-    this.age = 26;
-    this.hello = function () {
-      console.log("안녕하세여 " + this.name + "입니다");
-    };
-  }
-
-  const 학생1 = new 컨스트럭터("Yujaeyoung");
+  목표량계산기([10, 20, 30, 40, 50], 35);
 </script>
