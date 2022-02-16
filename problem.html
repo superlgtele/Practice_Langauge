@@ -11,6 +11,7 @@
     });
   });
   // -----------------------------------------------------
+
   const 출석부 = ["가", "나", "다", "라"];
   function 글자찾기(파라미터) {
     for (let i = 0; i < 4; i++) {
@@ -36,19 +37,59 @@
   }
   목표량계산기([10, 20, 30, 40, 50], 35);
   // -----------------------------------------------------
+
   const 스프레드배열 = [1, 2, 3];
   const 스프레드스트링 = "김밥";
   const 스프레드1 = [...스프레드배열, ...스프레드스트링];
   console.log(스프레드1);
+
   const 스프레드스트링배열 = ["you", "are"];
   const 스프레드함수 = function (a, b) {
     console.log([[...a], ...[...b]][1]);
   };
+
   스프레드함수(스프레드배열, 스프레드스트링배열);
   function 어레이만드는함수(...rest) {
     return rest;
   }
   const newArray = 어레이만드는함수(3, 7, 11);
   console.log(newArray);
+  // -----------------------------------------------------
+
+  let 부모님 = { name: "Kim", age: 50 };
+  // Object.create()는 ES5문법(상속) <-- (아들의 프로토타입 = 부모님)
+  // Object.getPrototypeOf(아들) == 아들.__proto__;
+  let 아들 = Object.create(부모님);
+  console.log(아들.__proto__);
+  console.log(Object.getPrototypeOf(아들));
+
+  // ES6문법(클래스)
+  class 부모님클래스 {
+    constructor(Name) {
+      this.name = Name;
+      // this.Hello = function () {
+      //   console.log("HiHi~");
+      // }; <-- 클래스에서뽑은아들이 직접 함수를 가짐!
+    }
+    // Hello() {
+    //   console.log("HiHi~");
+    // } <-- 부모님클래스의 프로토타입에 추가됨!
+  }
+  const 클래스에서뽑은아들 = new 부모님클래스("Lee");
+
+  class 할아버지 {
+    constructor(Name) {
+      this.성 = "Hong";
+      this.이름 = Name;
+    }
+  }
+  class 아버지 extends 할아버지 {
+    constructor(Name) {
+      super(Name);
+      this.나이 = 45;
+    }
+  }
+  const 물려받은아버지 = new 아버지("홍기");
+
   // -----------------------------------------------------
 </script>
