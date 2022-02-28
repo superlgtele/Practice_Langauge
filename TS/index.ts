@@ -37,6 +37,14 @@ function narrowing(x: number | string) {
 narrowing(123);
 narrowing("성공!");
 
+// Another Narrowing
+function falsynarrowing(x: string | undefined) {
+  if (x && typeof x === "string") {
+    // x가 undefined면 if문 실행 X
+    // x가 string이면 if문 실행 O
+  }
+}
+
 // type alias
 type Animal = { name: String; age: number };
 const 동물: Animal = { name: "monkey", age: 5 };
@@ -72,13 +80,17 @@ let 버튼기능 = document.querySelector("#button");
 });
 
 // Class
+// private -> class {} 안에서만 이용, 수정가능
+// protected -> class {} 안 + extends된 자식 class {} 안에서 사용가능
+// static -> 부모 class에 직접 부여됨 -> 자식들이 물려받지 못함
 class Person {
   name: String;
+  private FamilyName: string = "Kim";
   constructor(Lastname: string) {
-    this.name = Lastname;
+    this.name = this.FamilyName + Lastname;
   }
 }
-const 사람1 = new Person("kim");
+const 사람1 = new Person("-Hong-gi");
 console.log(사람1);
 
 // Interface
@@ -100,3 +112,22 @@ console.log(선생);
 // 왼쪽과 오른쪽 둘다 만족하는 타입은 없음
 // ex) type MyDog = { name: number} & {name: string}
 // const DoooG: MyDog = {name : "kim"} -> 에러발생
+
+// Rest Parameter Type
+function RestType(...rest: number[]) {
+  console.log(rest);
+}
+RestType(3, 7, 11, 15, 20);
+
+// Never Type
+// return 값이 없어야함 -> 모든 함수는 return undefined를 몰래 가지고 있음
+// EndPoint가 없어야함 -> Error가 발생하면 코드가 끝나는 것이 아니라 중단됨
+// 사실 void 쓰면됨. 알고만 있으면 될듯?
+function neverType(): never {
+  throw new Error();
+}
+function NeverType(): never {
+  while (true) {
+    console.log("무한 반복");
+  }
+}
