@@ -131,3 +131,27 @@ function NeverType(): never {
     console.log("무한 반복");
   }
 }
+
+// NameSpace
+// TypeScript 타입변수 숨기는 문법
+namespace 네임스페이스 {
+  export type NameData = string | number;
+}
+
+// Generic 함수
+// 파라미터로 타입을 입력하는 함수
+function GenericFunction<T>(x: T[]): T {
+  return x[0];
+}
+let kkkk = GenericFunction<number>([7, 2]);
+// console.log(kkkk + 1);
+
+// Tuple Type
+// Array 자료에 사용 -> 위치까지 검사하는 타입지정 가능
+let 고기는정말맛있나: [string, boolean] = ["삼겹살", true];
+function TupleRest(...x: [number, string]) {
+  console.log(x);
+}
+TupleRest(7, "행운의숫자");
+let PraAry = [3, 5, 7];
+let TupleArr: [number, number, ...number[]] = [1, 2, ...PraAry];

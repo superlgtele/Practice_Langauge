@@ -1,3 +1,12 @@
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 // Array, Object Type 지정하기
 var 배열 = ["kim", "park"];
 var 오브젝트 = { 작명: 777 };
@@ -99,3 +108,23 @@ function NeverType() {
         console.log("무한 반복");
     }
 }
+// Generic 함수
+// 파라미터로 타입을 입력하는 함수
+function GenericFunction(x) {
+    return x[0];
+}
+var kkkk = GenericFunction([7, 2]);
+// console.log(kkkk + 1);
+// Tuple Type
+// Array 자료에 사용 -> 위치까지 검사하는 타입지정 가능
+var 고기는정말맛있나 = ["삼겹살", true];
+function TupleRest() {
+    var x = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        x[_i] = arguments[_i];
+    }
+    console.log(x);
+}
+TupleRest(7, "행운의숫자");
+var PraAry = [3, 5, 7];
+var TupleArr = __spreadArray([1, 2], PraAry, true);
