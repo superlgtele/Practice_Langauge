@@ -115,3 +115,8 @@ body {
 .slide-box img {
   width: 100%;
 }
+
+.slide-button {
+  padding: 5px;
+  font-size: 5px;
+}
