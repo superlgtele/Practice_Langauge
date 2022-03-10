@@ -1,0 +1,17 @@
+$MainColor: orange;
+$MainFontSize: 16px;
+%scss-button {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+}
+
+.scss-test {
+  background-color: $MainColor;
+  font-size: $MainFontSize;
+}
+
+.scss-button-green {
+  @extend %scss-button;
+  color: green;
+}
