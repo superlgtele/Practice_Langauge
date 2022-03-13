@@ -86,4 +86,54 @@
 
 .gnb-inner .gnb-right {
   font-size: 15px;
+}
+
+#container {
+  position: relative;
+  width: 1100px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  letter-spacing: -0.2px;
+}
+
+.container-left {
+  float: left;
+  width: 730px;
+}
+
+.container-left .veta-top {
+  height: 135px;
+}
+
+.container-right {
+  float: right;
+  width: 330px;
+}
+
+.container-right .account {
+  background-color: #f7f9fa;
+  border: 1px solid #dae1e6;
+  height: 133px;
+}
+
+.container-right .account .a-center {
+  text-align: center;
+}
+
+.container-right .account p {
+  font-size: 12px;
+  padding-left: 20px;
+  color: grey;
+}
+.container-right .account a {
+  position: relative;
+  top: 20px;
+  padding: 15px 90px;
+  background-color: #19ce60;
+  border: 1px solid #15c654;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
 }/*# sourceMappingURL=test.css.map */
